@@ -162,17 +162,6 @@ class STRATEGY_BB_PLAY(IStrategy):
         dataframe['htsine'] = hilbert['sine']
         dataframe['htleadsine'] = hilbert['leadsine']
 
-        # Retrieve best bid and best ask from the orderbook
-        # ------------------------------------
-        """
-        # first check if dataprovider is available
-        if self.dp:
-            if self.dp.runmode in ('live', 'dry_run'):
-                ob = self.dp.orderbook(metadata['pair'], 1)
-                dataframe['best_bid'] = ob['bids'][0][0]
-                dataframe['best_ask'] = ob['asks'][0][0]
-        """
-
         return dataframe
 
     def populate_buy_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
